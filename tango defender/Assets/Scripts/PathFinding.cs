@@ -15,10 +15,10 @@ public class PathFinding : MonoBehaviour {
         grid = GetComponent<Grid>();
     }
 
-
     public void StartFindPath(Vector3 startPos, Vector3 targetPos)
     {
         StartCoroutine(FindPath(startPos, targetPos));
+
     }
 
     IEnumerator FindPath(Vector3 startPos, Vector3 targetPos)
@@ -47,7 +47,7 @@ public class PathFinding : MonoBehaviour {
                 if (currentNode == targetNode)
                 {
                     sw.Stop();
-                    print("Path found: " + sw.ElapsedMilliseconds + " ms");
+                    //print("Path found: " + sw.ElapsedMilliseconds + " ms");
                     pathSuccess = true;
                     break;
                 }

@@ -49,6 +49,7 @@
      <Compile Include="Assets\TangoSDK\Editor\TangoMenu.cs" />
      <Compile Include="Assets\TangoSDK\Editor\TangoSDKAbout.cs" />
      <None Include="Assets\Plugins\Android\UnityUxHelper\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\google-unity-wrapper\res\layout\activity_main.xml" />
      <None Include="Assets\Plugins\Android\google-unity-wrapper\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\tango-ux-support-library\res\layout-land\exception_component.xml" />
      <None Include="Assets\Plugins\Android\tango-ux-support-library\AndroidManifest.xml" />
@@ -67,7 +68,6 @@
      <None Include="Assets\Plugins\Android\tango-ux-support-library\res\values\strings.xml" />
      <None Include="Assets\Plugins\Android\UnityUxHelper\res\values\strings.xml" />
      <None Include="Assets\Plugins\Android\tango-cloud-lib\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\Android\google-unity-wrapper\res\layout\activity_main.xml" />
      <None Include="Assets\Plugins\Android\tango_java_lib\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\tango-ux-support-library\res\layout\layout_tango_ux.xml" />
      <None Include="Assets\Plugins\Android\tango-ux-support-library\res\layout\component_hold_steady.xml" />
