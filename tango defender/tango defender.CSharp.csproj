@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\PathRequestManager.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\Unit.cs" />
+    <Compile Include="Assets\Scripts\killer.cs" />
     <Compile Include="Assets\Scripts\start.cs" />
     <Compile Include="Assets\TangoPrefabs\Scripts\ARCameraPostProcess.cs" />
     <Compile Include="Assets\TangoPrefabs\Scripts\TangoARPoseController.cs" />

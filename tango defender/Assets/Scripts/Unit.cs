@@ -25,7 +25,11 @@ public class Unit : MonoBehaviour {
     void Update()
     {
         changer = b.GetBuilding();
-       
+        if (changer == true)
+        {
+            b.SetBuilding(false);
+            changed();
+        }
 
     }
 
@@ -36,12 +40,14 @@ public class Unit : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+      
     }
 
     void changed()
     {
+           
         StopCoroutine("FollowPath");
-     
+       
         PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
     }
 
@@ -59,8 +65,7 @@ public class Unit : MonoBehaviour {
 		while (true) {
             if (changer == true)
             {
-                changed();
-                b.SetBuilding(false);
+                continue;
             }
             if (transform.position == currentWaypoint) {
 				targetIndex ++;
@@ -73,9 +78,10 @@ public class Unit : MonoBehaviour {
 
 			}
 
-			transform.position = Vector3.MoveTowards(transform.position,currentWaypoint,speed * Time.deltaTime);
+         
+                transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
             
-
+            
             yield return null;
 
 

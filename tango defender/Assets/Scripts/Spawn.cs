@@ -4,7 +4,7 @@ using System.Collections;
 public class Spawn : MonoBehaviour {
 
      GameObject hazard;
-    GameObject envior;
+    GameObject seeker;
      Vector3 spawnValues;
     public int hazardCount;
     public float spawnWait;
@@ -13,8 +13,8 @@ public class Spawn : MonoBehaviour {
 
     void Start()
     {
-        envior = GameObject.Find("Seekers");
-        spawnValues = envior.transform.position;
+        seeker = GameObject.Find("Seekers");
+        spawnValues = seeker.transform.position;
         hazard = (GameObject)Resources.Load ("Prefabs/Seekers");
         StartCoroutine(SpawnWaves());
 

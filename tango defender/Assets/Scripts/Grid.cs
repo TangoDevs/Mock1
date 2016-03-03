@@ -14,10 +14,14 @@ public class Grid : MonoBehaviour {
     int gridSizeX, gridSizeY;
 
     GameObject envior;
+    bool changer = false;
+    Building b;
 
     void Awake()
     {
+
         envior = GameObject.Find("Environment");
+        b = envior.GetComponentInChildren<Building>();
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
@@ -26,7 +30,11 @@ public class Grid : MonoBehaviour {
 
     void Update()
     {
-        CreateGrid();
+        changer = b.GetBuilding();
+        if (changer == true)
+        {
+            CreateGrid();
+        }
     }
 
     public int MaxSize
@@ -37,7 +45,7 @@ public class Grid : MonoBehaviour {
         }
     }
 
-    void CreateGrid()
+    public void CreateGrid()
     {
         grid = new Node[gridSizeX, gridSizeY];
         Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.y / 2;
