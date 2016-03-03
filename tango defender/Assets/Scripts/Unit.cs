@@ -12,22 +12,21 @@ public class Unit : MonoBehaviour {
     int i=0;
     Clicker c;
     bool changer=false;
-    Building b;
+
 
     void Start()
     {
         c=GetComponentInParent<Clicker>();
-        b = GetComponentInParent<Building>();
-		tards = c.GetTarget();
+        tards = c.GetTarget();
 		target = tards.transform;
         PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
     }
     void Update()
     {
-        changer = b.GetBuilding();
+        changer = Building.GetBuilding();
         if (changer == true)
         {
-            b.SetBuilding(false);
+            Building.SetBuilding(false);
             changed();
         }
 
@@ -45,7 +44,7 @@ public class Unit : MonoBehaviour {
 
     void changed()
     {
-           
+        Debug.Log("hello changing");
         StopCoroutine("FollowPath");
        
         PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
@@ -63,10 +62,7 @@ public class Unit : MonoBehaviour {
 		Vector3 currentWaypoint = path[0];
 
 		while (true) {
-            if (changer == true)
-            {
-                continue;
-            }
+           
             if (transform.position == currentWaypoint) {
 				targetIndex ++;
                 

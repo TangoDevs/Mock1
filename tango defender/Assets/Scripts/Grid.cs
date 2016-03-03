@@ -30,7 +30,7 @@ public class Grid : MonoBehaviour {
 
     void Update()
     {
-        changer = b.GetBuilding();
+        changer = Building.GetBuilding();
         if (changer == true)
         {
             CreateGrid();
