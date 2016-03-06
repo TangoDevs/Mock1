@@ -12,22 +12,30 @@ public class Unit : MonoBehaviour {
     int i=0;
     Clicker c;
     bool changer=false;
+	GameObject plane,astar;
+	Building b;
+	Grid g;
 
 
     void Start()
     {
+		plane=GameObject.Find("Plane");
+		astar=GameObject.Find("A*");
+		b=plane.GetComponent<Building>();
         c=GetComponentInParent<Clicker>();
+		g=astar.GetComponent<Grid>();
         tards = c.GetTarget();
 		target = tards.transform;
         PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
     }
     void Update()
     {
-        changer = Building.GetBuilding();
+        changer = b.GetBuilding();
         if (changer == true)
         {
-            Building.SetBuilding(false);
+            b.SetBuilding(false);
             changed();
+			
         }
 
     }
@@ -45,8 +53,8 @@ public class Unit : MonoBehaviour {
     void changed()
     {
         Debug.Log("hello changing");
-        StopCoroutine("FollowPath");
-       
+        
+       g.CreateGrid();
         PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
     }
 
@@ -62,7 +70,11 @@ public class Unit : MonoBehaviour {
 		Vector3 currentWaypoint = path[0];
 
 		while (true) {
-           
+             if (changer == true)
+        {
+           new WaitForSeconds(1);
+			
+        }
             if (transform.position == currentWaypoint) {
 				targetIndex ++;
                 
@@ -73,7 +85,8 @@ public class Unit : MonoBehaviour {
 				currentWaypoint = path[targetIndex];
 
 			}
-
+			
+			
          
                 transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
             

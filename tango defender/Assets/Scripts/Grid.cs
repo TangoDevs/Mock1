@@ -13,29 +13,22 @@ public class Grid : MonoBehaviour {
     float nodeDiameter;
     int gridSizeX, gridSizeY;
 
-    GameObject envior;
+    GameObject plane;
     bool changer = false;
     Building b;
 
     void Awake()
     {
 
-        envior = GameObject.Find("Environment");
-        b = envior.GetComponentInChildren<Building>();
+        plane = GameObject.Find("Plane");
+        b = plane.GetComponentInChildren<Building>();
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         CreateGrid();
     }
 
-    void Update()
-    {
-        changer = Building.GetBuilding();
-        if (changer == true)
-        {
-            CreateGrid();
-        }
-    }
+  
 
     public int MaxSize
     {

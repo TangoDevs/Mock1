@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Google-Unity\Scripts\AndroidHelper.cs" />
      <Compile Include="Assets\Google-Unity\Scripts\AndroidLifecycle.cs" />
+     <Compile Include="Assets\Scripts\Building.cs" />
      <Compile Include="Assets\Scripts\Clicker.cs" />
      <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\Heap.cs" />
@@ -55,6 +56,7 @@
      <Compile Include="Assets\Scripts\PathRequestManager.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
+     <Compile Include="Assets\Scripts\killer.cs" />
      <Compile Include="Assets\Scripts\start.cs" />
      <Compile Include="Assets\TangoPrefabs\Scripts\ARCameraPostProcess.cs" />
      <Compile Include="Assets\TangoPrefabs\Scripts\TangoARPoseController.cs" />
