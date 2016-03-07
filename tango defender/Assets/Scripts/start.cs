@@ -3,18 +3,18 @@ using System.Collections;
 
 public class start : MonoBehaviour {
 	
-	bool allowed=true;
-	GameObject camera;
+	bool allowed=false;
+	GameObject cameran;
 	
 	void Start(){
-		camera=GameObject.Find("Camera");
+		cameran=GameObject.Find("Camera");
 		Changepos();
 	}
 	
 	void Changepos(){
 		while(true){
-			if(camera.transform.position!=new Vector3(0,1,0)){
-				camera.transform.position = Vector3.MoveTowards(transform.position, new Vector3(0,1,0), 2 * Time.deltaTime);
+			if(cameran.transform.position!=new Vector3(0,1,0)){
+				cameran.transform.position = Vector3.MoveTowards(transform.position, new Vector3(0,1,0), 2 * Time.deltaTime);
 			}
 			else{
 				return;
