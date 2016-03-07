@@ -13,7 +13,7 @@ public class Building : MonoBehaviour {
         building = false;
         prefab = (GameObject)Resources.Load("Prefabs/WoodTower");
         plane = GameObject.Find("Plane");
-		cam=GameObject.Find("Camera");
+		cam=GameObject.Find("camerarig");
 		s=cam.GetComponent<start>();
 		allowed=s.GetAllowed();
     }

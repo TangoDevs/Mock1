@@ -27,19 +27,28 @@ public class start : MonoBehaviour {
       
         if (col.gameObject.name == "BorderScene")
         {
-			Debug.Log("not ALLOWED");
-            allowed =false;
+			//Debug.Log("not ALLOWED");
+			allowed =true;
         }
       
     }
+
+	  void OnTriggerStay (Collider col) {
+			if (col.gameObject.name == "BorderScene")
+			{
+				//Debug.Log("not ALLOWED");
+			allowed =true;
+			}
+		}
+	
 	
 	  void OnTriggerExit(Collider col)
     {
       
         if (col.gameObject.name == "BorderScene")
         {
-			Debug.Log("ALLOWED");
-            allowed =true;
+			//Debug.Log("ALLOWED");
+            allowed =false;
         }
       
     }
