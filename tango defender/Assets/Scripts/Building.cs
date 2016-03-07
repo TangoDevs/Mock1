@@ -11,7 +11,7 @@ public class Building : MonoBehaviour {
     void Start()
     {
         building = false;
-        prefab = (GameObject)Resources.Load("Prefabs/Cube11");
+        prefab = (GameObject)Resources.Load("Prefabs/WoodTower");
         plane = GameObject.Find("Plane");
 		cam=GameObject.Find("Camera");
 		s=cam.GetComponent<start>();
@@ -22,6 +22,7 @@ public class Building : MonoBehaviour {
     void Update()
     {     
 		allowed=s.GetAllowed();
+
 		if(allowed==false){
 			//If Left Button is clicked
 			if (Input.GetMouseButtonDown(0))
@@ -30,6 +31,8 @@ public class Building : MonoBehaviour {
 				mousePosition = Input.mousePosition;
 				//Convert the mousePosition according to World position
 				targetPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 1));
+
+
 				//Set the position of targetObject
 				prefab.transform.position = targetPosition;
 

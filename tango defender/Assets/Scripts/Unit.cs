@@ -30,14 +30,16 @@ public class Unit : MonoBehaviour {
     }
     void Update()
     {
+        /*
         changer = b.GetBuilding();
         if (changer == true)
         {
+            speed = 0f;
             b.SetBuilding(false);
             changed();
 			
         }
-
+        */
     }
 
     void OnTriggerEnter(Collider col)
@@ -49,19 +51,21 @@ public class Unit : MonoBehaviour {
         }
       
     }
+   // void changed()   
+   /*
 
-    void changed()
     {
         Debug.Log("hello changing");
         
        g.CreateGrid();
         PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
     }
-
+    */
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful) {
 		if (pathSuccessful) {
 			path = newPath;
 			StopCoroutine("FollowPath");
+            speed = 0.05f;
 			StartCoroutine("FollowPath");
 		}
 	}
