@@ -13,6 +13,7 @@ public class Building : MonoBehaviour {
 	Text scoreTxt,goldTxt;
 	int score=0,gold=1000;
 
+
     void Awake()
     {
         building = false;
@@ -32,7 +33,6 @@ public class Building : MonoBehaviour {
 		goldTxt.text = " " + gold;
 		if (gold >= 100) {
 			allowed = s.GetAllowed ();
-
 			if (allowed == false) {
 				//If Left Button is clicked
 				if (Input.GetMouseButtonDown (0)) {
@@ -89,5 +89,6 @@ public class Building : MonoBehaviour {
 		scoreLabelObject = GameObject.Find ("ScoreCurrent");
 		scoreTxt = scoreLabelObject.GetComponent<Text>();
 	}
-  
+
+
 }

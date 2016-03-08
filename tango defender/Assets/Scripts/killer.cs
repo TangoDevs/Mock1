@@ -4,6 +4,8 @@ using System.Collections;
 public class killer : MonoBehaviour {
 	GameObject plane;
 	Building b;
+	float spawnDistance;
+
 	// Use this for initialization
 	void Start () {
 		plane=GameObject.Find("Plane");
@@ -17,14 +19,8 @@ public class killer : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-
-        {
-           //Destroy(col.gameObject);
-			b.AddGold(100);
-			b.AddScore (200);
-
-        }
-
-
+		if (col.name == "Target") {
+			col.GetComponentInChildren<HealthCastle> ().decreaseCastleHealth();
+		}
     }
 }

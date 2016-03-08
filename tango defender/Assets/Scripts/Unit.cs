@@ -42,15 +42,7 @@ public class Unit : MonoBehaviour {
         */
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-       // Debug.Log("hello");
-        if (col.gameObject.name == "target")
-        {
-            Destroy(gameObject);
-        }
-      
-    }
+  
    // void changed()   
    /*
 
