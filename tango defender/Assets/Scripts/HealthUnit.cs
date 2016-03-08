@@ -14,6 +14,8 @@ public class HealthUnit : MonoBehaviour {
 	}
 
 	public void decreaseUnitHealth(){
+		Destroy (transform.parent.gameObject);
+		//Destroy (gameObject);
 		Debug.Log ("decreasing health");
 	}
 }

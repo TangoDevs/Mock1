@@ -21,6 +21,7 @@ public class killer : MonoBehaviour {
     {
 		if (col.name == "Target") {
 			col.GetComponentInChildren<HealthCastle> ().decreaseCastleHealth();
+			Destroy (gameObject);
 		}
     }
 }

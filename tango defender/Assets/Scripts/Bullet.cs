@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
     // Speed
-    public float speed = 1;
+    public float speed = 0.0001f;
 
     // Target (set by Tower)
     public Transform target;
@@ -29,7 +29,6 @@ public class Bullet : MonoBehaviour {
         if (health)
         {
             health.decreaseUnitHealth();
-            Destroy(gameObject);
         }
     }
 }
