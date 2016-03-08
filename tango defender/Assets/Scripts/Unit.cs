@@ -88,5 +88,11 @@ public class Unit : MonoBehaviour {
 
 			}
 		}
+
+	void OnTriggerEnter(Collider col){
+		if (col.name == "Boundary") {
+			Destroy (gameObject);
+		}
 	}
+}
 

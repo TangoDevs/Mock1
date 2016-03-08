@@ -25,10 +25,13 @@ public class Bullet : MonoBehaviour {
     }
     void OnTriggerEnter(Collider co)
     {
+		Debug.Log ("triggered");
 		HealthUnit health = co.GetComponentInChildren<HealthUnit>();
         if (health)
         {
             health.decreaseUnitHealth();
+			Destroy (gameObject);
         }
     }
+
 }
