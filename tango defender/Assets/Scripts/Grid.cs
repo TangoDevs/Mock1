@@ -28,6 +28,10 @@ public class Grid : MonoBehaviour {
         CreateGrid();
     }
 
+
+	void Update(){
+		CreateGrid();
+	}
   
 
     public int MaxSize

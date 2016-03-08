@@ -74,11 +74,7 @@ public class Unit : MonoBehaviour {
 		Vector3 currentWaypoint = path[0];
 
 		while (true) {
-             if (changer == true)
-        {
-           new WaitForSeconds(1);
-			
-        }
+           
             if (transform.position == currentWaypoint) {
 				targetIndex ++;
                 
