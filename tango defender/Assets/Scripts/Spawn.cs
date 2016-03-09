@@ -17,7 +17,6 @@ public class Spawn : MonoBehaviour {
         spawnValues = seeker.transform.position;
 		hazard = (GameObject)Resources.Load ("Prefabs/Enemies/Battering Ram/Seekers");
         StartCoroutine(SpawnWaves());
-
     }
 
     IEnumerator SpawnWaves()

@@ -77,21 +77,21 @@ public class Unit : MonoBehaviour {
 				currentWaypoint = path[targetIndex];
 
 			}
-			
-			
-         
-                transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
             
             
             yield return null;
-
-
 			}
 		}
 
 	void OnTriggerEnter(Collider col){
 		if (col.name == "Boundary") {
-			Destroy (gameObject);
+			HealthCastle health = col.GetComponent<HealthCastle>();
+			if (health)
+			{
+				health.decreaseCastleHealth();
+				Destroy (gameObject);
+			}
 		}
 	}
 }
