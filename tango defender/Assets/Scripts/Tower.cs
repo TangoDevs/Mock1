@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Diagnostics;
+
 
 public class Tower : MonoBehaviour {
 	GameObject bulletPrefab;
+	int i=0;
+
 	// Use this for initialization
 	void Start () {
 		bulletPrefab = (GameObject)Resources.Load("Prefabs/Bullet");
@@ -12,18 +16,30 @@ public class Tower : MonoBehaviour {
 	{
 		
 
-		StartCoroutine (triggered (col));
-	} 
-
-	IEnumerator triggered(Collider col)
-	{
-		Debug.Log ("TRIGGERED");
 		if (col.GetComponent<killer> ()) {
-			Debug.Log ("STARTING BULLET");
+			
 			GameObject g = (GameObject)Instantiate (bulletPrefab, transform.position, Quaternion.identity);
 			g.GetComponent<Bullet> ().target = col.transform;
 		}
-		float sec = 1;
-		yield return new WaitForSeconds(sec);
+
+
 	} 
+	void OnTriggerStay(Collider col)
+	{
+	} 
+	void OnTriggerExit(Collider col)
+	{
+
+
+		if (col.GetComponent<killer> ()) {
+
+			GameObject g = (GameObject)Instantiate (bulletPrefab, transform.position, Quaternion.identity);
+			g.GetComponent<Bullet> ().target = col.transform;
+		}
+
+
+	} 
+
+
+
 }

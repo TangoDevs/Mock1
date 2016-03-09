@@ -20,7 +20,7 @@ public class killer : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
 		if (col.name == "Boundary") {
-			//col.GetComponentInChildren<HealthCastle> ().decreaseCastleHealth();
+			col.GetComponentInChildren<HealthCastle> ().decreaseCastleHealth();
 			Destroy (gameObject);
 		}
     }
